@@ -1,6 +1,6 @@
 angular.module('todoApp', [])
   .controller('TodoListController', function() {
-    
+
     var todoList = this;
     todoList.todos = [
       {text:'learn AngularJS', done:true},
@@ -26,4 +26,10 @@ angular.module('todoApp', [])
         if (!todo.done) todoList.todos.push(todo);
       });
     };
+
+    todoList.delete = function(index) {
+      if (index > -1) {
+      todoList.todos.splice(index, 1);
+}
+    }
   });

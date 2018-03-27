@@ -3,6 +3,8 @@
 
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="todo.js"></script>
     <link rel="stylesheet" href="todo.css">
   </head>
@@ -15,8 +17,10 @@
       <ul class="unstyled">
         <li ng-repeat="todo in todoList.todos">
           <label class="checkbox">
+
             <input type="checkbox" ng-model="todo.done">
             <span class="done-{{todo.done}}">{{todo.text}}</span>
+            <a class="glyphicon glyphicon-remove" ng-click="todoList.delete($index)"></a>
           </label>
         </li>
       </ul>
@@ -28,5 +32,5 @@
     </div>
   </body>
 
-  
+
 </html>
